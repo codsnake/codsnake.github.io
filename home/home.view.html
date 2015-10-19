@@ -1,11 +1,118 @@
-﻿<h1>Hi {{vm.user.firstName}}!</h1>
-<p>You're logged in!!</p>
-<h3>All registered users:</h3>
-<ul>
-    <li ng-repeat="user in vm.allUsers">
-        {{user.username}} ({{user.firstName}} {{user.lastName}})
-        - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
-    </li>
-</ul>
-<p>&nbsp;</p>
-<p><a href="#/login" class="btn btn-primary">Logout</a></p>
+  <div class="page-container">
+    <div class="sidebar-menu">
+
+    		<div class="sidebar-menu-inner">
+
+    			<header class="logo-env">
+
+    				<!-- logo -->
+    				<div class="logo">
+    					<a href="index.html">
+    						<img src="assets/images/logo@2x.png" width="120" alt="" />
+    					</a>
+    				</div>
+
+    				<!-- logo collapse icon -->
+    				<div class="sidebar-collapse">
+    					<a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+    						<i class="entypo-menu"></i>
+    					</a>
+    				</div>
+
+
+    				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+    				<div class="sidebar-mobile-menu visible-xs">
+    					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+    						<i class="entypo-menu"></i>
+    					</a>
+    				</div>
+
+    			</header>
+
+
+    			<ul id="main-menu" class="main-menu">
+    				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
+    				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+    				<li class="active opened active">
+    					<a href="index.html">
+    						<i class="entypo-gauge"></i>
+    						<span class="title">Dashboard</span>
+    					</a>
+    				</li>
+
+    				<li>
+    					<a href="layout-api.html">
+    						<i class="entypo-layout"></i>
+    						<span class="title">Layouts</span>
+    					</a>
+    				</li>
+    				<li>
+    					<a href="index.html" target="_blank">
+    						<i class="entypo-monitor"></i>
+    						<span class="title">Frontend</span>
+    					</a>
+    				</li>
+    				<li>
+    					<a href="ui-panels.html">
+    						<i class="entypo-newspaper"></i>
+    						<span class="title">UI Elements</span>
+    					</a>
+    				</li>
+    				<li>
+    					<a href="mailbox.html">
+    						<i class="entypo-mail"></i>
+    						<span class="title">Mailbox</span>
+    						<span class="badge badge-secondary">8</span>
+    					</a>
+    				</li>
+    				<li>
+    					<a href="forms-main.html">
+    						<i class="entypo-doc-text"></i>
+    						<span class="title">Forms</span>
+    					</a>
+    				</li>
+    				<li>
+    					<a href="tables-main.html">
+    						<i class="entypo-window"></i>
+    						<span class="title">Tables</span>
+    					</a>
+    				</li>
+    				<li>
+    					<a href="extra-icons.html">
+    						<i class="entypo-bag"></i>
+    						<span class="title">Extra</span>
+    						<span class="badge badge-info badge-roundless">New Items</span>
+    					</a>
+    				</li>
+    				<li>
+    					<a href="charts.html">
+    						<i class="entypo-chart-bar"></i>
+    						<span class="title">Charts</span>
+    					</a>
+    				</li>
+    				<li>
+    					<a href="#">
+    						<i class="entypo-flow-tree"></i>
+    						<span class="title">Menu Levels</span>
+    					</a>
+    				</li>
+    			</ul>
+
+    		</div>
+
+    	</div>
+
+    <div class="main-content">
+      <h1>Hi {{vm.user.firstName}}!</h1>
+      <p>You're logged in!!</p>
+      <h3>All registered users:</h3>
+      <ul>
+          <li ng-repeat="user in vm.allUsers">
+              {{user.username}} ({{user.firstName}} {{user.lastName}})
+              - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
+          </li>
+      </ul>
+      <p>&nbsp;</p>
+      <p><a href="#/login" class="btn btn-primary">Logout</a></p>
+    </div>
+</div>
