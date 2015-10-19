@@ -127,7 +127,6 @@
     	</div>
 
     <div class="main-content">
-
       <h1>Hi {{vm.user.firstName}}!</h1>
       <p>You're logged in!!</p>
       <h3>All registered users:</h3>
