@@ -18,8 +18,19 @@
 </head>
 <body class="page-body">
 
-  <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-  <div ng-view></div>
+<!--
+  <div class="page-container">
+  	<div class="sidebar-menu">
+  	</div>
+
+  	<div class="main-content">
+-->
+      <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+      <div ng-view></div>
+<!--
+  	</div>
+  </div
+-->
 
 
     <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
