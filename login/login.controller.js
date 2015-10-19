@@ -5,8 +5,8 @@
         .module('app')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$location', 'AuthenticationService', 'FlashService'];
-    function LoginController($location, AuthenticationService, FlashService) {
+    LoginController.$inject = ['$location', '$http', 'AuthenticationService', 'FlashService'];
+    function LoginController($location, $http, AuthenticationService, FlashService) {
         var vm = this;
 
         vm.login = login;
@@ -22,12 +22,23 @@
                 if (response.success) {
                     AuthenticationService.SetCredentials(vm.username, vm.password);
                     $location.path('/');
+                    getStamps(0);
                 } else {
                     FlashService.Error(response.message);
                     vm.dataLoading = false;
                 }
             });
         };
+
+        function getStamps(id){
+          $http({
+              url: 'http://www.fidelizy.com.br/getUserStamps/'+id,
+              method: 'GET',
+              responseType: 'json'
+          }).success(function (data) {
+              console.log(data);
+          })
+        }
     }
 
 })();
