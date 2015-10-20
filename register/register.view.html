@@ -6,35 +6,81 @@
     <h2>Register</h2>
     <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
     <form name="form" ng-submit="vm.register()" role="form">
-      <!-- First Name -->
-        <div class="form-group" ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }">
-            <label for="username">First name</label>
-            <input type="text" name="firstName" id="firstName" class="form-control" ng-model="vm.user.firstName" required />
-            <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+      <!-- Company Name -->
+        <div class="form-group" ng-class="{ 'has-error': form.companyName.$dirty && form.companyName.$error.required }">
+            <label for="CompanyName">Nome do Estabelecimento</label>
+            <input type="text" name="companyName" id="companyName" class="form-control" ng-model="vm.user.companyName" required />
+            <span ng-show="form.companyName.$dirty && form.companyName.$error.required" class="help-block">Company Name é obrigatório</span>
         </div>
 
-        <!-- Last Name -->
-        <div class="form-group" ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }">
-            <label for="username">Last name</label>
-            <input type="text" name="lastName" id="Text1" class="form-control" ng-model="vm.user.lastName" required />
-            <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
-        </div>
-
-        <!-- User Name -->
+        <!-- Nickname -->
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <label for="username">Username</label>
+            <label for="username">Nome de usuário</label>
             <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Nome de usuário é obrigatório</span>
+        </div>
+
+        <!-- CNPJ -->
+        <div class="form-group" ng-class="{ 'has-error': form.cnpj.$dirty && form.cnpj.$error.required }">
+            <label for="cnpj">CNPJ</label>
+            <input type="text" name="cnpj" id="cnpj" class="form-control" ng-model="vm.user.cnpj" required />
+            <span ng-show="form.cnpj.$dirty && form.cnpj.$error.required" class="help-block">CNPJ é obrigatório</span>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.address.$error.required }">
+            <label for="address">Endereço</label>
+            <input type="text" name="address" id="address" class="form-control" ng-model="vm.user.address" required />
+            <span ng-show="form.address.$dirty && form.address.$error.required" class="help-block">Endereço é obrigatório</span>
+        </div>
+
+        <!-- Number -->
+        <div class="form-group" ng-class="{ 'has-error': form.number.$dirty && form.number.$error.required }">
+            <label for="number">Número</label>
+              <input type="text" name="number" id="number" class="form-control" ng-model="vm.user.number" required />
+            <span ng-show="form.number.$dirty && form.number.$error.required" class="help-block">Número é obrigatório</span>
+        </div>
+
+        <!-- Complemento -->
+        <div class="form-group">
+            <label for="comp">Complemento</label>
+            <input type="text" name="comp" id="comp" class="form-control" ng-model="vm.user.comp" required />
+        </div>
+
+        <!-- Telefone -->
+        <div class="form-group" ng-class="{ 'has-error': form.telefone.$dirty && form.telefone.$error.required }">
+            <label for="telefone">Telefone</label>
+            <input type="text" name="telefone" id="telefone" class="form-control" ng-model="vm.user.telefone" required />
+            <span ng-show="form.telefone.$dirty && form.telefone.$error.required" class="help-block">Telefone é obrigatório</span>
+        </div>
+
+        <!-- Website -->
+        <div class="form-group" ng-class="{ 'has-error': form.site.$dirty && form.site.$error.required }">
+            <label for="site">Site</label>
+            <input type="text" name="site" id="site" class="form-control" ng-model="vm.user.site" required />
+            <span ng-show="form.site.$dirty && form.site.$error.required" class="help-block">Site é obrigatório</span>
+        </div>
+
+        <!-- Lat -->
+        <div class="form-group" ng-class="{ 'has-error': form.latitude.$dirty && form.latitude.$error.required }">
+            <label for="latitude">Latitude</label>
+            <input type="text" name="latitude" id="latitude" class="form-control" ng-model="vm.user.latitude" required />
+            <span ng-show="form.latitude.$dirty && form.latitude.$error.required" class="help-block">Latitude é obrigatório</span>
+        </div>
+
+        <!-- Long -->
+        <div class="form-group" ng-class="{ 'has-error': form.longitude.$dirty && form.longitude.$error.required }">
+            <label for="longitudelongitude">Longitude</label>
+            <input type="text" name="longitude" id="longitude" class="form-control" ng-model="vm.user.longitude" required />
+            <span ng-show="form.longitude.$dirty && form.longitude.$error.required" class="help-block">Longitude é obrigatório</span>
         </div>
 
         <!-- Password -->
         <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <label for="password">Password</label>
+            <label for="password">Senha</label>
             <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
-            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Senha é obrigatória</span>
         </div>
-
-
 
         <!-- Submit! -->
         <div class="form-actions">

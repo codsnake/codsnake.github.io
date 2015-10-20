@@ -128,12 +128,23 @@
 
     <div class="main-content">
 
-      <h1>Hi {{vm.user.firstName}}!</h1>
-      <p>You're logged in!!</p>
-      <h3>All registered users:</h3>
+      <h1>Olá {{vm.user.username}}!</h1>
+      <p>- CompanyName: {{vm.user.companyName}}</p>
+      <p>- CNPJ: {{vm.user.cnpj}}</p>
+      <p>- Endereço: {{vm.user.address}}</p>
+      <p>- Número: {{vm.user.number}}</p>
+      <p>- Complemento: {{vm.user.comp}}</p>
+      <p>- Telefone: {{vm.user.telefone}}</p>
+      <p>- Site: {{vm.user.site}}</p>
+      <p>- Latitude: {{vm.user.latitude}}</p>
+      <p>- Longitude: {{vm.user.longitude}}</p>
+
+      <p>Você está logado!!</p>
+      <h3>Todos estabelecimentos:</h3>
+
       <ul>
           <li ng-repeat="user in vm.allUsers">
-              {{user.username}} ({{user.firstName}} {{user.lastName}})
+              {{user.companyName}} - {{user.username}} | ({{user.address}} {{user.number}})
               - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
           </li>
       </ul>
