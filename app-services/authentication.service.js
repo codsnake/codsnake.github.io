@@ -8,6 +8,7 @@
     AuthenticationService.$inject = ['$http', '$cookieStore', '$rootScope', '$timeout', 'UserService'];
     function AuthenticationService($http, $cookieStore, $rootScope, $timeout, UserService) {
         var service = {};
+        var baseRestURL = "http://www.fidelizy.com.br";
 
         service.Login = Login;
         service.SetCredentials = SetCredentials;
@@ -19,7 +20,7 @@
 
             /* Dummy authentication for testing, uses $timeout to simulate api call
              ----------------------------------------------*/
-            $timeout(function () {
+            /*$timeout(function () {
                 var response;
                 UserService.GetByUsername(username)
                     .then(function (user) {
@@ -31,23 +32,34 @@
                         callback(response);
                     });
             }, 1000);
-
+            */
             /* Use this for real authentication
              ----------------------------------------------*/
-            //$http.post('/api/authenticate', { username: username, password: password })
-            //    .success(function (response) {
-            //        callback(response);
-            //    });
+            $http.get(baseRestURL + '/login/' + username + "/" + password) // { username: username, password: password })
+                .success(function (response) {
+                  if(response != false){
+                    response.success = true;
+                    callback(response);
+                  }
+                });
 
         }
 
-        function SetCredentials(username, password) {
+        function SetCredentials(username, password, store) {
             var authdata = Base64.encode(username + ':' + password);
 
             $rootScope.globals = {
                 currentUser: {
                     username: username,
-                    authdata: authdata
+                    authdata: authdata,
+                    
+                    id: store.id,
+                    login: store.login,
+                    company: store.company,
+                    nickname: store.nickname,
+                    logo: store.logo,
+                    latitude: store.latitude,
+                    longitude: store.longitude
                 }
             };
 

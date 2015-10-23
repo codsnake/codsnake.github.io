@@ -125,7 +125,9 @@
     		</div>
 
     	</div>
+      <!-- Sidebar End -->
 
+      <!-- Page Content Start -->
     <div class="main-content">
 
       <h1>Olá {{vm.user.username}}!</h1>
@@ -140,14 +142,35 @@
       <p>- Longitude: {{vm.user.longitude}}</p>
 
       <p>Você está logado!!</p>
-      <h3>Todos estabelecimentos:</h3>
 
+      <h1>Seus Selos:</h1>
+      <ul>
+        <li ng-repeat="stamp in vm.storeStamps" >
+            <p>Id do selo: {{stamp.id}} </p>
+            <p>Amount: {{stamp.amount}} </p>
+            <p>Last Visit: {{stamp.lasttime}} </p>
+            <p>store: {{stamp.store}} </p>
+            <a href="#" ng-click="vm.getUserById({{stamp.id}})">
+              <p>user: {{stamp.user}} </p>
+            </a>
+            <img ng-src='{{stamp.logo}}' width="120" height="60"/>
+        </li>
+      </ul>
+
+
+
+
+      <!-- Section Deactivated
+      <h3>Todos estabelecimentos:</h3>
+style="background-color:ghostwhite"
       <ul>
           <li ng-repeat="user in vm.allUsers">
               {{user.companyName}} - {{user.username}} | ({{user.address}} {{user.number}})
               - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
           </li>
       </ul>
+      -->
+
       <p>&nbsp;</p>
       <p><a href="#/login" class="btn btn-primary">Logout</a></p>
     </div>

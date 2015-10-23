@@ -5,26 +5,41 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['UserService', '$rootScope'];
-    function HomeController(UserService, $rootScope) {
+    HomeController.$inject = ['UserService', 'StoreService', '$rootScope'];
+    function HomeController(UserService, StoreService, $rootScope) {
         var vm = this;
 
-        vm.user = null;
+        vm.store = null;
+        vm.storeStamps = [];
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
 
         initController();
 
         function initController() {
-            loadCurrentUser();
-            loadAllUsers();
+            loadCurrentStore();
+            //loadAllUsers();
+            loadCurrentStoreStamps();
         }
 
-        function loadCurrentUser() {
-            UserService.GetByUsername($rootScope.globals.currentUser.username)
-                .then(function (user) {
-                    vm.user = user;
-                });
+        function loadCurrentStore() {
+            //UserService.GetById($rootScope.globals.currentUser.id)
+            //    .then(function (user) {
+                    vm.store = $rootScope.globals.currentUser; //user;
+            //    });
+        }
+
+        function loadCurrentStoreStamps() {
+            //UserService.GetById($rootScope.globals.currentUser.id)
+            //    .then(function (user) {
+            StoreService.GetStoreStampsById($rootScope.globals.currentUser.id)
+                  .then(function (data){
+                    if(data != null && data != ""){
+                      vm.storeStamps = data.stamps;
+                    }
+                  });
+
+            //    });
         }
 
         function loadAllUsers() {

@@ -3,10 +3,10 @@
 
     angular
         .module('app')
-        .factory('UserService', UserService);
+        .factory('UserServiceLocal', UserServiceLocal);
 
-    UserService.$inject = ['$timeout', '$filter', '$q'];
-    function UserService($timeout, $filter, $q) {
+    UserServiceLocal.$inject = ['$timeout', '$filter', '$q'];
+    function UserServiceLocal($timeout, $filter, $q) {
 
         var service = {};
 

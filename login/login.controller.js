@@ -18,11 +18,13 @@
 
         function login() {
             vm.dataLoading = true;
+
             AuthenticationService.Login(vm.username, vm.password, function (response) {
                 if (response.success) {
-                    AuthenticationService.SetCredentials(vm.username, vm.password);
+                    AuthenticationService.SetCredentials(vm.username, vm.password, response);
+
+                    //AuthenticationService.SetStamps();
                     $location.path('/');
-                    getStamps(0);
                 } else {
                     FlashService.Error(response.message);
                     vm.dataLoading = false;
@@ -32,7 +34,7 @@
 
         function getStamps(id){
           $http({
-              url: 'http://www.fidelizy.com.br/getUserStamps/'+id,
+              url: 'http://www.fidelizy.com.br/getStoreStamps/'+id,
               method: 'GET',
               responseType: 'json'
           }).success(function (data) {
