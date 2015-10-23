@@ -11,8 +11,11 @@
 
         vm.store = null;
         vm.storeStamps = [];
+        $scope.storeCustomer = null;
+
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
+        vm.getUserById = getUserById;
 
         initController();
 
@@ -40,6 +43,13 @@
                   });
 
             //    });
+        }
+
+        function getUserById(id){
+            UserService.GetById(id)
+              .then(function(user){
+                  $scope.storeCustomer = user;
+              })
         }
 
         function loadAllUsers() {

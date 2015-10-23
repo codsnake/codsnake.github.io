@@ -150,8 +150,12 @@
             <p>Amount: {{stamp.amount}} </p>
             <p>Last Visit: {{stamp.lasttime}} </p>
             <p>store: {{stamp.store}} </p>
-            <a href="#" ng-click="vm.getUserById({{stamp.id}})">
+            <a href="#" ng-click="vm.getUserById(1)">
               <p>user: {{stamp.user}} </p>
+              <div ng-show="{{vm.storeCustomer != null}}">
+                <p>{{vm.storeCustomer.id}}</p>
+                <p>{{vm.storeCustomer.name}} {{vm.storeCustomer.surname}} </p>
+              </div>
             </a>
             <img ng-src='{{stamp.logo}}' width="120" height="60"/>
         </li>
