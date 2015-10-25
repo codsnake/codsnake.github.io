@@ -5,8 +5,8 @@
         .module('app')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['UserService', 'StoreService', '$rootScope'];
-    function HomeController(UserService, StoreService, $rootScope) {
+    HomeController.$inject = ['UserService', 'StoreService', '$scope', '$rootScope'];
+    function HomeController(UserService, StoreService, $scope, $rootScope) {
         var vm = this;
 
         vm.store = null;
@@ -29,6 +29,7 @@
             //UserService.GetById($rootScope.globals.currentUser.id)
             //    .then(function (user) {
                     vm.store = $rootScope.globals.currentUser; //user;
+                    console.log(vm.store);
             //    });
         }
 

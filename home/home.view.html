@@ -130,8 +130,8 @@
       <!-- Page Content Start -->
     <div class="main-content">
 
-      <h1>Olá {{vm.user.username}}!</h1>
-      <p>- CompanyName: {{vm.user.companyName}}</p>
+      <h1>Olá {{vm.store.username}}!</h1>
+      <p>- CompanyName: {{vm.store.company}}</p>
       <p>- CNPJ: {{vm.user.cnpj}}</p>
       <p>- Endereço: {{vm.user.address}}</p>
       <p>- Número: {{vm.user.number}}</p>
@@ -150,12 +150,12 @@
             <p>Amount: {{stamp.amount}} </p>
             <p>Last Visit: {{stamp.lasttime}} </p>
             <p>store: {{stamp.store}} </p>
-            <a href="#" ng-click="vm.getUserById(1)">
+            <a href="" ng-click="vm.getUserById(1)">
               <p>user: {{stamp.user}} </p>
-              <div ng-show="{{vm.storeCustomer != null}}">
-                <p>{{vm.storeCustomer.id}}</p>
-                <p>{{vm.storeCustomer.name}} {{vm.storeCustomer.surname}} </p>
-              </div>
+
+                <p>{{storeCustomer.id}}</p>
+                <p>{{storeCustomer.name}} {{storeCustomer.surname}} </p>
+
             </a>
             <img ng-src='{{stamp.logo}}' width="120" height="60"/>
         </li>

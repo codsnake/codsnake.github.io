@@ -52,10 +52,10 @@
                 currentUser: {
                     username: username,
                     authdata: authdata,
-                    
+
                     id: store.id,
                     login: store.login,
-                    company: store.company,
+                    companyName: store.company,
                     nickname: store.nickname,
                     logo: store.logo,
                     latitude: store.latitude,
