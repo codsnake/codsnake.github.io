@@ -43,7 +43,7 @@
 
         <!-- Complemento -->
         <div class="form-group" ng-class="{ 'has-error': form.comp.$dirty && form.comp.$error.required }">
-            <label for="comp">Complemento</label>
+            <label for="comp">Complemento *</label>
             <input type="text" name="comp" id="comp" class="form-control" ng-model="vm.store.comp" required/>
             <span ng-show="form.comp.$dirty && form.comp.$error.required" class="help-block">Complemento é obrigatório</span>
         </div>
@@ -53,6 +53,12 @@
             <label for="telefone">Telefone *</label>
             <input type="text" name="phone" id="phone" class="form-control" ng-model="vm.store.telefone" required />
             <span ng-show="form.telefone.$dirty && form.telefone.$error.required" class="help-block">Telefone é obrigatório</span>
+        </div>
+
+        <!-- Contact email -->
+        <div class="form-group">
+            <label for="site">Email</label>
+            <input type="text" name="email" id="email" class="form-control" ng-model="vm.store.email" />
         </div>
 
         <!-- Website -->
