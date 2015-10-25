@@ -22,6 +22,7 @@
 
         function GetStoreStampsById(id){
             return $http.get(baseRestURL + '/getStoreStamps/1').then(handleSuccess, handleError('Error getting store stamps') );
+            // TODO: Change 1 to ' + id.
         }
 
         function GetAll() {
@@ -37,7 +38,21 @@
         }
 
         function Create(store) {
-            return $http.post('/api/stores', store).then(handleSuccess, handleError('Error creating store'));
+
+            return $http.get(baseRestURL + '/register/' +
+                                    store.username + "/" +
+                                    store.password + "/" +
+                                    store.companyName + "/" +
+                                    store.latitude  + "/" +
+                                    store.longitude  + "/" +
+                                    store.cnpj + "/" +
+                                    store.username  + "/" +
+                                    store.address  + "/" +
+                                    store.number + "/" +
+                                    store.comp + "/" +
+                                    store.telefone + "/" +
+                                    store.site)
+                                        .then(handleSuccess, handleError('Erro ao registrar novo estabelecimento!'));
         }
 
         function Update(store) {
