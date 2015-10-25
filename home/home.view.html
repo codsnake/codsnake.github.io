@@ -1,181 +1,272 @@
-  <div class="page-container">
-    <div class="sidebar-menu">
+<div class="page-container">
+  <div class="sidebar-menu">
 
-    		<div class="sidebar-menu-inner">
+      <div class="sidebar-menu-inner">
 
-    			<header class="logo-env">
+        <header class="logo-env">
 
-    				<!-- logo -->
-    				<div class="logo">
-    					<a href="index.html">
-    						<img src="assets/fidelizy_img/Logo-Fidelizy.png" width="120" alt="" />
-    					</a>
-    				</div>
-
-    				<!-- logo collapse icon -->
-    				<div class="sidebar-collapse">
-    					<a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
-    						<i class="entypo-menu"></i>
-    					</a>
-    				</div>
-
-
-    				<!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
-    				<div class="sidebar-mobile-menu visible-xs">
-    					<a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
-    						<i class="entypo-menu"></i>
-    					</a>
-    				</div>
-
-    			</header>
-
-
-    			<ul id="main-menu" class="main-menu">
-    				<!-- add class "multiple-expanded" to allow multiple submenus to open -->
-    				<!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
-    				<li class="active opened active">
-    					<a href="index.html">
-    						<i class="fa fa-home"></i>
-    						<span class="title">Home</span>
-    					</a>
-    				</li>
-
-            <li>
-    					<a>
-    						<i class="entypo-trophy"></i>
-    						<span class="title">Campanhas</span>
-    					</a>
-    				</li>
-            <li>
-              <a>
-                <i class="fa fa-tags"></i>
-                <span class="title">Selos</span>
-                <span class="badge badge-primary">35</span>
-              </a>
-            </li>
-            <li>
-              <a>
-                <i class="entypo-mail"></i>
-                <span class="title">Mensagens</span>
-                <span class="badge badge-secondary">8</span>
-              </a>
-            </li>
-            <li>
-              <a>
-                <i class="entypo-tools"></i>
-                <span class="title">Extra</span>
-              </a>
-            </li>
-            <li>
-              <a>
-                <i class="entypo-cog"></i>
-                <span class="title">Configurações</span>
-              </a>
-            </li>
-
-            <!--
-    				<li>
-    					<a href="layout-api.html">
-    						<i class="entypo-layout"></i>
-    						<span class="title">Layouts</span>
-    					</a>
-    				</li>
-    				<li>
-    					<a href="index.html" target="_blank">
-    						<i class="entypo-monitor"></i>
-    						<span class="title">Frontend</span>
-    					</a>
-    				</li>
-    				<li>
-    					<a href="ui-panels.html">
-    						<i class="entypo-newspaper"></i>
-    						<span class="title">UI Elements</span>
-    					</a>
-    				</li>
-
-
-    				<li>
-    					<a href="tables-main.html">
-    						<i class="entypo-window"></i>
-    						<span class="title">Tables</span>
-    					</a>
-    				</li>
-    				<li>
-    					<a href="extra-icons.html">
-    						<i class="entypo-bag"></i>
-    						<span class="title">Extra</span>
-    						<span class="badge badge-info badge-roundless">New Items</span>
-    					</a>
-    				</li>
-    				<li>
-    					<a href="charts.html">
-    						<i class="entypo-chart-bar"></i>
-    						<span class="title">Charts</span>
-    					</a>
-    				</li>
-    				<li>
-    					<a href="#">
-    						<i class="entypo-flow-tree"></i>
-    						<span class="title">Menu Levels</span>
-    					</a>
-    				</li>
-          -->
-    			</ul>
-
-    		</div>
-
-    	</div>
-      <!-- Sidebar End -->
-
-      <!-- Page Content Start -->
-    <div class="main-content">
-
-      <h1>Olá {{vm.store.username}}!</h1>
-      <p>- CompanyName: {{vm.store.company}}</p>
-      <p>- CNPJ: {{vm.user.cnpj}}</p>
-      <p>- Endereço: {{vm.user.address}}</p>
-      <p>- Número: {{vm.user.number}}</p>
-      <p>- Complemento: {{vm.user.comp}}</p>
-      <p>- Telefone: {{vm.user.telefone}}</p>
-      <p>- Site: {{vm.user.site}}</p>
-      <p>- Latitude: {{vm.user.latitude}}</p>
-      <p>- Longitude: {{vm.user.longitude}}</p>
-
-      <p>Você está logado!!</p>
-
-      <h1>Seus Selos:</h1>
-      <ul>
-        <li ng-repeat="stamp in vm.storeStamps" >
-            <p>Id do selo: {{stamp.id}} </p>
-            <p>Amount: {{stamp.amount}} </p>
-            <p>Last Visit: {{stamp.lasttime}} </p>
-            <p>store: {{stamp.store}} </p>
-            <a href="" ng-click="vm.getUserById(1)">
-              <p>user: {{stamp.user}} </p>
-
-                <p>{{storeCustomer.id}}</p>
-                <p>{{storeCustomer.name}} {{storeCustomer.surname}} </p>
-
+          <!-- logo -->
+          <div class="logo">
+            <a href="index.html">
+              <img src="assets/fidelizy_img/Logo-Fidelizy.png" width="120" alt="" />
             </a>
-            <img ng-src='{{stamp.logo}}' width="120" height="60"/>
+          </div>
+
+          <!-- logo collapse icon -->
+          <div class="sidebar-collapse">
+            <a href="#" class="sidebar-collapse-icon"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
+              <i class="entypo-menu"></i>
+            </a>
+          </div>
+
+
+          <!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
+          <div class="sidebar-mobile-menu visible-xs">
+            <a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
+              <i class="entypo-menu"></i>
+            </a>
+          </div>
+
+        </header>
+
+
+        <ul id="main-menu" class="main-menu">
+          <!-- add class "multiple-expanded" to allow multiple submenus to open -->
+          <!-- class "auto-inherit-active-class" will automatically add "active" class for parent elements who are marked already with class "active" -->
+          <li class="active opened active">
+            <a href="index.html">
+              <i class="fa fa-home"></i>
+              <span class="title">Home</span>
+            </a>
+          </li>
+
+          <li>
+            <a>
+              <i class="entypo-trophy"></i>
+              <span class="title">Campanhas</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="fa fa-tags"></i>
+              <span class="title">Selos</span>
+              <span class="badge badge-primary">35</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="entypo-mail"></i>
+              <span class="title">Mensagens</span>
+              <span class="badge badge-secondary">8</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="entypo-tools"></i>
+              <span class="title">Extra</span>
+            </a>
+          </li>
+          <li>
+            <a>
+              <i class="entypo-cog"></i>
+              <span class="title">Configurações</span>
+            </a>
+          </li>
+
+          <!--
+          <li>
+            <a href="layout-api.html">
+              <i class="entypo-layout"></i>
+              <span class="title">Layouts</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html" target="_blank">
+              <i class="entypo-monitor"></i>
+              <span class="title">Frontend</span>
+            </a>
+          </li>
+          <li>
+            <a href="ui-panels.html">
+              <i class="entypo-newspaper"></i>
+              <span class="title">UI Elements</span>
+            </a>
+          </li>
+
+
+          <li>
+            <a href="tables-main.html">
+              <i class="entypo-window"></i>
+              <span class="title">Tables</span>
+            </a>
+          </li>
+          <li>
+            <a href="extra-icons.html">
+              <i class="entypo-bag"></i>
+              <span class="title">Extra</span>
+              <span class="badge badge-info badge-roundless">New Items</span>
+            </a>
+          </li>
+          <li>
+            <a href="charts.html">
+              <i class="entypo-chart-bar"></i>
+              <span class="title">Charts</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="entypo-flow-tree"></i>
+              <span class="title">Menu Levels</span>
+            </a>
+          </li>
+        -->
+        </ul>
+
+      </div>
+
+    </div>
+    <!-- Sidebar End -->
+
+    <!-- Page Content Start -->
+  <div class="main-content">
+
+    <div class="row">
+    <!-- Profile Info and Notifications -->
+    <div class="col-md-6 col-sm-8 clearfix">
+
+      <ul class="user-info pull-left pull-none-xsm">
+
+        <!-- Profile Info -->
+
+          <a href="#" style="font-size:30px">
+          <!--	<img src="assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44">-->
+          Olá, {{vm.store.username}}
+          </a>
+      </ul>
+
+      <ul class="user-info pull-left pull-right-xs pull-none-xsm">
+
+        <!-- Raw Notifications -->
+        <li class="notifications dropdown">
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+            <i class="entypo-attention"></i>
+            <span class="badge badge-info">1</span>
+          </a>
+
+
+        </li>
+
+        <!-- Message Notifications -->
+        <li class="notifications dropdown">
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+            <i class="entypo-mail"></i>
+            <span class="badge badge-secondary">1</span>
+          </a>
+
+        </li>
+
+        <!-- Task Notifications -->
+        <li class="notifications dropdown">
+
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+            <i class="entypo-list"></i>
+            <span class="badge badge-warning">1</span>
+          </a>
+
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- Raw Links -->
+    <div class="col-md-6 col-sm-4 clearfix hidden-xs">
+
+      <ul class="list-inline links-list pull-right">
+
+        <!-- Language Selector -->
+        <li class="dropdown language-selector">
+
+          Language: &nbsp;
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-close-others="true">
+            <img src="assets/images/flag-uk.png">
+          </a>
+
+        </li>
+
+        <li class="sep"></li>
+
+        <li>
+          <a href="#" data-toggle="chat" data-collapse-sidebar="1">
+            <i class="entypo-chat"></i>
+            Chat
+
+            <span class="badge badge-success chat-notifications-badge">1</span>
+          </a>
+        </li>
+
+        <li class="sep"></li>
+
+        <li>
+          <a href="#/login">
+            Log Out <i class="entypo-logout right"></i>
+          </a>
         </li>
       </ul>
 
-
-
-
-      <!-- Section Deactivated
-      <h3>Todos estabelecimentos:</h3>
-style="background-color:ghostwhite"
-      <ul>
-          <li ng-repeat="user in vm.allUsers">
-              {{user.companyName}} - {{user.username}} | ({{user.address}} {{user.number}})
-              - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
-          </li>
-      </ul>
-      -->
-
-      <p>&nbsp;</p>
-      <p><a href="#/login" class="btn btn-primary">Logout</a></p>
     </div>
+  </div>
+  <hr></hr>
+
+    <!--<h1>Olá {{vm.store.username}}!</h1>-->
+    <p>- CompanyName: {{vm.store.company}}</p>
+    <p>- CNPJ: {{vm.user.cnpj}}</p>
+    <p>- Endereço: {{vm.user.address}}</p>
+    <p>- Número: {{vm.user.number}}</p>
+    <p>- Complemento: {{vm.user.comp}}</p>
+    <p>- Telefone: {{vm.user.telefone}}</p>
+    <p>- Site: {{vm.user.site}}</p>
+    <p>- Latitude: {{vm.user.latitude}}</p>
+    <p>- Longitude: {{vm.user.longitude}}</p>
+
+    <p>Você está logado!!</p>
+
+    <h1>Seus Selos:</h1>
+    <ul>
+      <li ng-repeat="stamp in vm.storeStamps" >
+          <p>Id do selo: {{stamp.id}} </p>
+          <p>Amount: {{stamp.amount}} </p>
+          <p>Last Visit: {{stamp.lasttime}} </p>
+          <p>store: {{stamp.store}} </p>
+          <a href="" ng-click="vm.getUserById(1)">
+            <p>user: {{stamp.user}} </p>
+
+              <p>{{storeCustomer.id}}</p>
+              <p>{{storeCustomer.name}} {{storeCustomer.surname}} </p>
+
+          </a>
+          <img ng-src='{{stamp.logo}}' width="120" height="60"/>
+      </li>
+    </ul>
+
+
+
+
+    <!-- Section Deactivated
+    <h3>Todos estabelecimentos:</h3>
+style="background-color:ghostwhite"
+    <ul>
+        <li ng-repeat="user in vm.allUsers">
+            {{user.companyName}} - {{user.username}} | ({{user.address}} {{user.number}})
+            - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
+        </li>
+    </ul>
+    -->
+
+    <p>&nbsp;</p>
+    <p><a href="#/login" class="btn btn-primary">Logout</a></p>
+  </div>
 </div>
