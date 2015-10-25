@@ -27,6 +27,12 @@
                 controllerAs: 'vm'
             })
 
+            .when('/stamps', {
+                controller: 'StampsController',
+                templateUrl: 'stamps/stamps.view.html',
+                controllerAs: 'vm'
+            })
+
             .otherwise({ redirectTo: '/login' });
     }
 

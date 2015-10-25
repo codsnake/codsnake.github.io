@@ -3,10 +3,10 @@
 
     angular
         .module('app')
-        .controller('HomeController', HomeController);
+        .controller('StampsController', StampsController);
 
-    HomeController.$inject = ['UserService', 'StoreService', '$scope', '$rootScope'];
-    function HomeController(UserService, StoreService, $scope, $rootScope) {
+    StampsController.$inject = ['UserService', 'StoreService', '$scope', '$rootScope'];
+    function StampsController(UserService, StoreService, $scope, $rootScope) {
         var vm = this;
 
         vm.store = null;
@@ -22,15 +22,15 @@
 
         function initController() {
             loadCurrentStore();
-            loadCurrentStoreStamps();
             //loadAllUsers();
+            loadCurrentStoreStamps();
         }
 
         function loadCurrentStore() {
             //UserService.GetById($rootScope.globals.currentUser.id)
             //    .then(function (user) {
                     vm.store = $rootScope.globals.currentUser; //user;
-                    //console.log(vm.store);
+                    console.log(vm.store);
             //    });
         }
 
