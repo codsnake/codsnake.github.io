@@ -51,7 +51,8 @@
                                     store.number + "/" +
                                     store.comp + "/" +
                                     store.telefone + "/" +
-                                    store.site)
+                                    store.site + "/" +
+                                    store.logo)
                                         .then(handleSuccess, handleError('Erro ao registrar novo estabelecimento!'));
         }
 

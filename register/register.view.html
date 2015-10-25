@@ -21,6 +21,13 @@
         </div>
 
         <!-- Address -->
+        <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.city.$error.required }">
+            <label for="city">Cidade *</label>
+            <input type="text" name="city" id="city" class="form-control" ng-model="vm.store.city" required />
+            <span ng-show="form.city.$dirty && form.city.$error.required" class="help-block">Cidade é obrigatória</span>
+        </div>
+
+        <!-- Address -->
         <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.address.$error.required }">
             <label for="address">Endereço *</label>
             <input type="text" name="address" id="address" class="form-control" ng-model="vm.store.address" required />
@@ -35,9 +42,10 @@
         </div>
 
         <!-- Complemento -->
-        <div class="form-group">
+        <div class="form-group" ng-class="{ 'has-error': form.comp.$dirty && form.comp.$error.required }">
             <label for="comp">Complemento</label>
-            <input type="text" name="comp" id="comp" class="form-control" ng-model="vm.store.comp" />
+            <input type="text" name="comp" id="comp" class="form-control" ng-model="vm.store.comp" required/>
+            <span ng-show="form.comp.$dirty && form.comp.$error.required" class="help-block">Complemento é obrigatório</span>
         </div>
 
         <!-- Telefone -->

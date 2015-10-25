@@ -17,16 +17,16 @@
             var store = vm.store;
 
             var geocoder = new google.maps.Geocoder();
-            var address = store.address + ", " + store.number;
+            var address = store.address + ", " + store.number + ", " + store.city;
             geocoder.geocode( { 'address': address}, function(results, status) {
               if (status == google.maps.GeocoderStatus.OK)
               {
-                  store.latitude = results[0].geometry.location.lat() + "";
-                  store.longitude = results[0].geometry.location.lng() + "";
+                  store.latitude = results[0].geometry.location.lat();
+                  store.longitude = results[0].geometry.location.lng();
 
                   StoreService.Create(store)
                     .then(function (response) {
-                        if (response.success) {
+                        if (response) {
                             FlashService.Success('Estabelecimento registrado com sucesso!', true);
                             $location.path('/login');
                         } else {
