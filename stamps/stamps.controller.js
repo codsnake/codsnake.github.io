@@ -12,11 +12,11 @@
         vm.store = null;
         vm.storeStamps = [];
         vm.numberOfStamps = null;
-        $scope.stampOwner = null;
+        //$scope.stampOwner = null;
 
-        vm.allUsers = [];
-        vm.deleteUser = deleteUser;
         vm.getUserById = getUserById;
+        //vm.allUsers = [];
+        //vm.deleteUser = deleteUser;
 
         initController();
 
@@ -57,8 +57,12 @@
                 2- ADD User info into the found stamp's owner object (stamp.owner.info))
                 3- Maybe bring stamps to $scope so ajax works fine.
                 */
-
-                  $scope.stampOwner = user;
+                vm.storeStamps.forEach(function(stamp){
+                  if(stamp.id == stampId){
+                    stamp.owner = user;
+                  }
+                })
+                // $scope.stampOwner = user;
               })
         }
 
