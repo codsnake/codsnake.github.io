@@ -195,12 +195,16 @@
           <p>Amount: {{stamp.amount}} </p>
           <p>Last Visit: {{stamp.lasttime}} </p>
           <p>store: {{stamp.store}} </p>
-          <a href="" ng-click="vm.getUserById(1)">
+          <a href="" ng-click="vm.getUserById(stamp.id, 1)">
             <p>user: {{stamp.user}} </p>
 
-              <p>{{storeCustomer.id}}</p>
-              <p>{{storeCustomer.name}} {{storeCustomer.surname}} </p>
+              <p>{{stampOwner.id}}</p>
+              <p>{{stampOwner.name}} {{stampOwner.surname}} </p>
 
+              <!--
+              <p>{{stamp.owner.id}}</p>
+              <p>{{stamp.owner.name}} {{stamp.owner.surname}} </p>
+              -->
           </a>
           <img ng-src='{{stamp.logo}}' width="120" height="60"/>
       </li>

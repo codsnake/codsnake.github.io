@@ -12,7 +12,7 @@
         vm.store = null;
         vm.storeStamps = [];
         vm.numberOfStamps = null;
-        $scope.storeCustomer = null;
+        $scope.stampOwner = null;
 
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
@@ -48,10 +48,17 @@
             //    });
         }
 
-        function getUserById(id){
+        function getUserById(stampId, id){
             UserService.GetById(id)
               .then(function(user){
-                  $scope.storeCustomer = user;
+                //TODO
+                /*
+                1- Search StampID into vm.storeStamps
+                2- ADD User info into the found stamp's owner object (stamp.owner.info))
+                3- Maybe bring stamps to $scope so ajax works fine.
+                */
+
+                  $scope.stampOwner = user;
               })
         }
 
