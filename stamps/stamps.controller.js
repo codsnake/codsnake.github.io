@@ -51,7 +51,7 @@
         function getUserById(stampId, id){
             UserService.GetById(id)
               .then(function(user){
-                //TODO
+                //Done!
                 /*
                 1- Search StampID into vm.storeStamps
                 2- ADD User info into the found stamp's owner object (stamp.owner.info))
@@ -60,6 +60,13 @@
                 vm.storeStamps.forEach(function(stamp){
                   if(stamp.id == stampId){
                     stamp.owner = user;
+
+                    //Gender conversion 1-Male 0-Female
+                    if(stamp.owner.gender == 1 ){
+                      stamp.owner.gender = "Masculino";
+                    } else if(stamp.owner.gender ==0 ){
+                      stamp.owner.gender = "Feminino";
+                    }
                   }
                 })
                 // $scope.stampOwner = user;

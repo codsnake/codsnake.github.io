@@ -59,7 +59,7 @@
             <a>
               <i class="entypo-mail"></i>
               <span class="title">Mensagens</span>
-              <span class="badge badge-secondary">8</span>
+              <span class="badge badge-secondary">0</span>
             </a>
           </li>
           <li>
@@ -214,84 +214,44 @@
     </ul>-->
 
 
-    <accordion close-others="true">
-      <accordion-group heading="{{stamp.id}}" ng-repeat="stamp in vm.storeStamps">
-
-  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="headingOne">
-
-              <p>Id do selo: {{stamp.id}} </p>
-              <p>Amount: {{stamp.amount}} </p>
-              <p>Last Visit: {{stamp.lasttime}} </p>
-              <p>store: {{stamp.store}} </p>
-              <a href="" ng-click="vm.getUserById(stamp.id, 1)">
-                <p>user: {{stamp.user}} </p>
+  <accordion close-others="true">
+    <accordion-group heading="{{stamp.id}}" ng-repeat="stamp in vm.storeStamps">
+      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="panel panel-default">
+          <div class="panel-heading" role="tab" id="headingOne">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-target="#{{stamp.id}}" href="" aria-expanded="true" aria-controls="collapseOne"
+                 ng-click="vm.getUserById(stamp.id, 1)">
+                  <img style="display: inline-block" class="pull-right" ng-src='{{stamp.logo}}' width="120" height="60"/>
+                  <!--Id do selo: {{stamp.id}}-->
+                  <!--Store: {{stamp.store}}-->
+                  <!--user: {{stamp.user}}-->
+                  <h4>
+                    {{stamp.amount}} Selos</br></br>
+                    Última Visita: {{stamp.lasttime}}
+                  </h4>
               </a>
-                  <!--
-                  <p>{{stampOwner.id}}</p>
-                  <p>{{stampOwner.name}} {{stampOwner.surname}} </p>
-                  -->
+            </h4>
+          </div>
+        <div id="{{stamp.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            <h4>Informações deste cliente:</h4>
+            <!--{{stamp.owner.id}}-->
+            Nome: {{stamp.owner.name}} {{stamp.owner.surname}} ({{stamp.owner.gender}})</br>
+            {{stamp.owner.age}} anos. </br>
+            Email: {{stamp.owner.email}} </br>
 
-                  <p>{{stamp.owner.id}}</p>
-                  <p>{{stamp.owner.name}} {{stamp.owner.surname}} </p>
-
-              <img ng-src='{{stamp.logo}}' width="120" height="60"/>
-
-
-  </div></div></div>
+          </div>
+      </div>
+    </div>
+  </div>
 </acordion-group>
-
-
-
 </accordion>
-<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a role="button" data-toggle="collapse" data-target="#collapseOne" href="" aria-expanded="true" aria-controls="collapseOne">
-          Collapsible Group Item #1
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-target="#collapseTwo" href="" aria-expanded="false" aria-controls="collapseTwo">
-          Collapsible Group Item #2
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-target="#collapseThree" href="" aria-expanded="false" aria-controls="collapseThree">
-          Collapsible Group Item #3
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
-    </div>
-  </div>
-</div>
 
-
-
+      <!--
+      <p>{{stampOwner.id}}</p>
+      <p>{{stampOwner.name}} {{stampOwner.surname}} </p>
+      -->
 
     <!-- Section Deactivated
     <h3>Todos estabelecimentos:</h3>
