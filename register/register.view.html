@@ -1,7 +1,12 @@
 <div class="jumbotron">
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">
-
+<!-- TODO
+1-Separar em duas telas através de divs com ng-hide e ng-show (com variavel boolean 'stepOneComplete' no .js)
+2-Primeira tela -> Nome de Usuário do Estabelecimento, Senha, Re-Senha, Email
+3-Segunda tela -> Todo o Resto (Nome, CNPJ, Cidade, Endereço, Número, Complemento, Telefone e Site)
+4-Validar se os dois campos de senha são iguais ao submeter.
+-->
 <div class="col-md-6 col-md-offset-3">
     <h2>Cadastro de novo Estabelecimento</h2>
     <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
