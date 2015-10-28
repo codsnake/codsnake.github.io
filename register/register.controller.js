@@ -5,11 +5,23 @@
         .module('app')
         .controller('RegisterController', RegisterController);
 
-    RegisterController.$inject = ['StoreService', '$location', '$rootScope', 'FlashService'];
-    function RegisterController(StoreService, $location, $rootScope, FlashService) {
+    RegisterController.$inject = ['StoreService', '$scope', '$location', '$rootScope', 'FlashService'];
+    function RegisterController(StoreService, $scope, $location, $rootScope, FlashService) {
         var vm = this;
 
         vm.register = register;
+        vm.firstStepComplete = false;
+        vm.stepButton = "Continuar";
+
+        $scope.toggleStep = function(boolean){
+          if(boolean){
+            vm.firstStepComplete = false;
+            vm.stepButton = "Continuar";
+          } else {
+            vm.firstStepComplete = true;
+            vm.stepButton = "Voltar";
+          }
+        }
 
         function register() {
             vm.dataLoading = true;
