@@ -33,6 +33,12 @@
                 controllerAs: 'vm'
             })
 
+            .when('/campaigns', {
+                controller: 'CampaignsController',
+                templateUrl: 'campaigns/campaigns.view.html',
+                controllerAs: 'vm'
+            })
+
             .otherwise({ redirectTo: '/login' });
     }
 

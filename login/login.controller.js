@@ -13,7 +13,7 @@
 
         (function initController() {
             // reset login status
-            AuthenticationService.ClearCredentials();
+            //AuthenticationService.ClearCredentials();
         })();
 
         function login() {

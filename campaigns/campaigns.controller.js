@@ -3,10 +3,10 @@
 
     angular
         .module('app')
-        .controller('StampsController', StampsController);
+        .controller('CampaignsController', CampaignsController);
 
-    StampsController.$inject = ['UserService', 'StoreService', '$scope', '$rootScope'];
-    function StampsController(UserService, StoreService, $scope, $rootScope) {
+    CampaignsController.$inject = ['UserService', 'StoreService', '$scope', '$rootScope'];
+    function CampaignsController(UserService, StoreService, $scope, $rootScope) {
         var vm = this;
 
         vm.store = null;
@@ -32,6 +32,15 @@
                     vm.store = $rootScope.globals.currentUser; //user;
             //    });
         }
+
+        $scope.submitForm =function(campaign){
+          //TODO
+          /*
+          1- Gravar Campaign na lista no $scope.campaigns
+          2- Setar variáveis com propriedades de campaign
+          */
+           $scope.test = campaign;
+        };
 
         function loadCurrentStoreStamps() {
             //UserService.GetById($rootScope.globals.currentUser.id)
