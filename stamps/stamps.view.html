@@ -239,9 +239,8 @@
       <div class="panel panel-default" id="accordion" role="tablist" aria-multiselectable="true">
 
           <div class="panel-heading" role="tab" id="headingOne">
-            <div class="panel-title">
-              <a role="button" data-toggle="collapse" data-target="#{{stamp.id}}" aria-expanded="true" aria-controls="collapseOne"
-                 ng-click="vm.getUserById(stamp.id, 1)">
+            <a role="button" data-toggle="collapse" data-target="#{{stamp.id}}" aria-expanded="true" aria-controls="collapseOne">
+              <div class="panel-title">
                   <!--Id do selo: {{stamp.id}}-->
                   <!--Store: {{stamp.store}}-->
                   <!--user: {{stamp.user}}-->
@@ -255,10 +254,10 @@
                     </br>
                     Última Visita: {{stamp.lasttime}}
                   </h4>
-            </div>
+                </div>
+              </a>
             <div class="panel-options">
-              <a role="button" data-toggle="collapse" data-target="#{{stamp.id}}" href="" aria-expanded="true" aria-controls="collapseOne"
-                 ng-click="vm.getUserById(stamp.id, 1)"><i class="entypo-down-open"></i></a>
+              <a role="button" data-toggle="collapse" data-target="#{{stamp.id}}" href="" aria-expanded="true" aria-controls="collapseOne"><i class="entypo-down-open"></i></a>
             </div>
           </div>
 
