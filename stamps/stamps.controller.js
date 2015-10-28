@@ -22,8 +22,8 @@
 
         function initController() {
             loadCurrentStore();
-            //loadAllUsers();
             loadCurrentStoreStamps();
+            //loadAllStampsDetail();
         }
 
         function loadCurrentStore() {
@@ -41,11 +41,46 @@
                     if(data != null && data != ""){
                       vm.storeStamps = data.stamps;
                       vm.numberOfStamps = vm.storeStamps.length;
+
+                      vm.storeStamps.forEach(function(stamp){
+
+                        UserService.GetById(stamp.id).then(function(user){
+
+                            stamp.owner = user;
+
+                            //Gender conversion 1-Male 0-Female
+                            if(stamp.owner.gender == 1 ){
+                              stamp.owner.gender = "Masculino";
+                            } else if(stamp.owner.gender == 0 ){
+                              stamp.owner.gender = "Feminino";
+                            }
+
+                        })
+                      })
+
                     }
                   });
 
             //    });
         }
+
+        function loadAllStampsDetail(){
+          vm.storeStamps.forEach(function(stamp){
+
+            UserService.GetById(stamp.id).then(function(user){
+
+                stamp.owner = user;
+
+                //Gender conversion 1-Male 0-Female
+                if(stamp.owner.gender == 1 ){
+                  stamp.owner.gender = "Masculino";
+                } else if(stamp.owner.gender == 0 ){
+                  stamp.owner.gender = "Feminino";
+                }
+
+            })
+          })
+      }
 
         function getUserById(stampId, id){
             UserService.GetById(id)

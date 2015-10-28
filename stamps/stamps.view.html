@@ -240,13 +240,19 @@
         <div class="panel panel-default">
           <div class="panel-heading" role="tab" id="headingOne">
             <h4 class="panel-title">
-              <a role="button" data-toggle="collapse" data-target="#{{stamp.id}}" href="" aria-expanded="true" aria-controls="collapseOne"
+              <a role="button" data-toggle="collapse" data-target="#{{stamp.id}}" aria-expanded="true" aria-controls="collapseOne"
                  ng-click="vm.getUserById(stamp.id, 1)">
                   <!--Id do selo: {{stamp.id}}-->
                   <!--Store: {{stamp.store}}-->
                   <!--user: {{stamp.user}}-->
+
+                  <h3>
+                    {{stamp.owner.name}} {{stamp.owner.surname}}
+                  </h3>
+                  </br>
                   <h4>
-                    {{stamp.amount}} Selos acumulados</br></br>
+                    {{stamp.amount}} Selos acumulados
+                    </br>
                     Última Visita: {{stamp.lasttime}}
                   </h4>
                   <div class="pull-right" >
@@ -257,11 +263,12 @@
           </div>
         <div id="{{stamp.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
-            <h4>Informações deste cliente:</h4>
+            <h4>Detalhes deste cliente:</h4>
             <img style="display: inline-block" class="pull-right" ng-src='{{stamp.logo}}' width="120" height="60"/>
             <div class="col-md-8">
-              <!--{{stamp.owner.id}}-->
-              Nome: {{stamp.owner.name}} {{stamp.owner.surname}} ({{stamp.owner.gender}})</br>
+              <!--{{stamp.owner.id}} -
+              Nome: {{stamp.owner.name}} {{stamp.owner.surname}} -->
+              {{stamp.owner.gender}}</br>
               {{stamp.owner.age}} anos. </br>
               Email: {{stamp.owner.email}} </br>
             </div>
@@ -272,15 +279,15 @@
 </acordion-group>
 </accordion>
 
-<!-- T-Rex Panel -->
+<!-- Trex Panel
 <accordion close-others="true">
 <accordion-group heading="{{stamp.id}}" ng-repeat="stamp in vm.storeStamps">
 <div class="row">
   <div class="col-md-12">
 
-    <div class="panel panel-default panel-shadow" data-collapsed="1"><!-- to apply shadow add class "panel-shadow" -->
+    <div class="panel panel-default panel-shadow" data-collapsed="1">
 
-      <!-- panel head -->
+
       <div class="panel-heading">
         <div class="panel-title">
           <h4>
@@ -294,12 +301,11 @@
         </div>
       </div>
 
-      <!-- panel body -->
       <div class="panel-body" id="{{stamp.id}}1">
         <img style="display: inline-block" class="pull-right" ng-src='{{stamp.logo}}' width="120" height="60"/>
         <p>
         <h4>Informações deste cliente:</h4>
-        <!--{{stamp.owner.id}}-->
+        {{stamp.owner.id}}
         Nome: {{stamp.owner.name}} {{stamp.owner.surname}} ({{stamp.owner.gender}})</br>
         {{stamp.owner.age}} anos. </br>
         Email: {{stamp.owner.email}} </br>
@@ -308,12 +314,12 @@
       </div>
 
     </div>
-
   </div>
 </div>
 
 </acordion-group>
 </accordion>
+-->
       <!--
       <p>{{stampOwner.id}}</p>
       <p>{{stampOwner.name}} {{stampOwner.surname}} </p>
