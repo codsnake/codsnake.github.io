@@ -208,7 +208,7 @@
 
     <p>Você está logado!!</p>
 -->
-    <h1>Seus Selos:</h1>
+    <h1>Seus Selos e Clientes:</h1>
 
 
 <!--
@@ -242,25 +242,29 @@
             <h4 class="panel-title">
               <a role="button" data-toggle="collapse" data-target="#{{stamp.id}}" href="" aria-expanded="true" aria-controls="collapseOne"
                  ng-click="vm.getUserById(stamp.id, 1)">
-                  <img style="display: inline-block" class="pull-right" ng-src='{{stamp.logo}}' width="120" height="60"/>
                   <!--Id do selo: {{stamp.id}}-->
                   <!--Store: {{stamp.store}}-->
                   <!--user: {{stamp.user}}-->
                   <h4>
-                    {{stamp.amount}} Selos</br></br>
+                    {{stamp.amount}} Selos acumulados</br></br>
                     Última Visita: {{stamp.lasttime}}
                   </h4>
+                  <div class="pull-right" >
+                    <i class="entypo-down-open" style="display: inline-block"></i>
+                  </div>
               </a>
             </h4>
           </div>
         <div id="{{stamp.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
             <h4>Informações deste cliente:</h4>
-            <!--{{stamp.owner.id}}-->
-            Nome: {{stamp.owner.name}} {{stamp.owner.surname}} ({{stamp.owner.gender}})</br>
-            {{stamp.owner.age}} anos. </br>
-            Email: {{stamp.owner.email}} </br>
-
+            <img style="display: inline-block" class="pull-right" ng-src='{{stamp.logo}}' width="120" height="60"/>
+            <div class="col-md-8">
+              <!--{{stamp.owner.id}}-->
+              Nome: {{stamp.owner.name}} {{stamp.owner.surname}} ({{stamp.owner.gender}})</br>
+              {{stamp.owner.age}} anos. </br>
+              Email: {{stamp.owner.email}} </br>
+            </div>
           </div>
       </div>
     </div>
@@ -278,8 +282,12 @@
 
       <!-- panel head -->
       <div class="panel-heading">
-        <div class="panel-title">{{stamp.amount}} Selos</br>
-        Última Visita: {{stamp.lasttime}}</div>
+        <div class="panel-title">
+          <h4>
+            {{stamp.amount}} Selos</br>
+            Última Visita: {{stamp.lasttime | date:'medium'}}
+          </h4>
+        </div>
 
         <div class="panel-options">
           <a href="#" ng-click="vm.getUserById(stamp.id, 1)" data-rel="collapse"><i class="entypo-down-open"></i></a>
@@ -288,7 +296,7 @@
 
       <!-- panel body -->
       <div class="panel-body" id="{{stamp.id}}1">
-
+        <img style="display: inline-block" class="pull-right" ng-src='{{stamp.logo}}' width="120" height="60"/>
         <p>
         <h4>Informações deste cliente:</h4>
         <!--{{stamp.owner.id}}-->
