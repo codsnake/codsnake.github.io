@@ -19,7 +19,6 @@
             </a>
           </div>
 
-
           <!-- open/close menu icon (do not remove if you want to enable menu on mobile devices) -->
           <div class="sidebar-mobile-menu visible-xs">
             <a href="#" class="with-animation"><!-- add class "with-animation" to support animation -->
@@ -269,7 +268,7 @@
             <div class="form-group">
               <label for="field-1" class="control-label">Nome</label>
 
-              <input type="text" class="form-control" id="field-1" placeholder="Nome da campanha">
+              <input ng-model="vm.newCampaign.name" type="text" class="form-control" id="field-1" placeholder="Nome da campanha">
             </div>
 
           </div>
@@ -280,7 +279,7 @@
             <div class="form-group">
               <label for="field-2" class="control-label">Descrição</label>
 
-              <input type="text" class="form-control" id="field-2" placeholder="Descrição da campanha">
+              <input ng-model="vm.newCampaign.description" type="text" class="form-control" id="field-2" placeholder="Descrição da campanha">
             </div>
 
           </div>
@@ -292,7 +291,7 @@
             <div class="form-group">
               <label for="field-3" class="control-label">Data Inicial</label>
 
-              <input type="text" class="form-control" id="field-3" placeholder="Data inicial da campanha">
+              <input ng-model="vm.newCampaign.initDate" type="text" class="form-control" id="field-3" placeholder="Data inicial da campanha">
             </div>
 
           </div>
@@ -302,7 +301,7 @@
             <div class="form-group">
               <label for="field-4" class="control-label">Data Final</label>
 
-              <input type="text" class="form-control" id="field-4" placeholder="Data final da campanha.">
+              <input ng-model="vm.newCampaign.endDate" type="text" class="form-control" id="field-4" placeholder="Data final da campanha.">
             </div>
 
           </div>
@@ -313,7 +312,7 @@
             <div class="form-group">
               <label for="field-5" class="control-label">Premio</label>
 
-              <input type="text" class="form-control" id="field-5" placeholder="Premio da campanha">
+              <input ng-model="vm.newCampaign.prize" type="text" class="form-control" id="field-5" placeholder="Premio da campanha">
             </div>
 
           </div>
@@ -323,7 +322,7 @@
             <div class="form-group">
               <label for="field-6" class="control-label">Selos Necessários</label>
 
-              <input type="text" class="form-control" id="field-6" placeholder="10">
+              <input ng-model="vm.newCampaign.numberOfStamps" type="text" class="form-control" id="field-6" placeholder="10">
             </div>
 
           </div>
@@ -332,7 +331,7 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" data-clear="true">Cancelar</button>
+        <button ng-click="campaignRegisterCancel()" type="button" class="btn btn-default" data-dismiss="modal" data-clear="true">Cancelar</button>
         <button type="button" class="btn btn-info">Salvar</button>
       </div>
     </div>

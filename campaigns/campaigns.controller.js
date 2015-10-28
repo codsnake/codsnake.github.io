@@ -88,6 +88,10 @@
                 });
         }
 
+        $scope.campaignRegisterCancel = function(){
+          vm.newCampaign = {};
+        }
+
         function deleteUser(id) {
             UserService.Delete(id)
             .then(function () {
