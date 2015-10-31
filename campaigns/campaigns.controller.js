@@ -12,11 +12,10 @@
         vm.store = null;
         vm.storeStamps = [];
         vm.numberOfStamps = null;
-        //$scope.stampOwner = null;
-
-        vm.getUserById = getUserById;
-        //vm.allUsers = [];
-        //vm.deleteUser = deleteUser;
+        vm.newCampaign = {};
+        var sampleCampaign1 = {name: "Promoção 1", description: "Descrição da Promoção 1", startDate: "01-10-2015", endDate: "01-12-2015", reward: "Premio da promoção 1", numberOfStamps: 7}
+        var sampleCampaign2 = {name: "Promoção 2", description: "Descrição da Promoção 2", startDate: "16-09-2015", endDate: "22-11-2015", reward: "Premio da promoção 2", numberOfStamps: 15}
+        var sampleCampaign3 = {name: "Promoção 2", description: "Descrição da Promoção 3", startDate: "25-10-2015", endDate: "17-01-2016", reward: "Premio da promoção 3", numberOfStamps: 12}
 
         initController();
 
@@ -24,27 +23,29 @@
             loadCurrentStore();
             //loadAllUsers();
             loadCurrentStoreStamps();
+            $scope.campaigns = [sampleCampaign1, sampleCampaign2, sampleCampaign3]
         }
 
         function loadCurrentStore() {
-            //UserService.GetById($rootScope.globals.currentUser.id)
-            //    .then(function (user) {
-                    vm.store = $rootScope.globals.currentUser; //user;
-            //    });
+          vm.store = $rootScope.globals.currentUser; //user;
         }
 
-        $scope.submitForm =function(campaign){
+        $scope.registerNewCampaign = function(){
           //TODO
           /*
           1- Gravar Campaign na lista no $scope.campaigns
           2- Setar variáveis com propriedades de campaign
           */
-           $scope.test = campaign;
+
+          $scope.campaigns.push(vm.newCampaign);
+          vm.newCampaign = {};
         };
 
+        $scope.campaignRegisterCancel = function(){
+          vm.newCampaign = {};
+        }
+
         function loadCurrentStoreStamps() {
-            //UserService.GetById($rootScope.globals.currentUser.id)
-            //    .then(function (user) {
             StoreService.GetStoreStampsById($rootScope.globals.currentUser.id)
                   .then(function (data){
                     if(data != null && data != ""){
@@ -52,52 +53,9 @@
                       vm.numberOfStamps = vm.storeStamps.length;
                     }
                   });
-
-            //    });
         }
 
-        function getUserById(stampId, id){
-            UserService.GetById(id)
-              .then(function(user){
-                //Done!
-                /*
-                1- Search StampID into vm.storeStamps
-                2- ADD User info into the found stamp's owner object (stamp.owner.info))
-                3- Maybe bring stamps to $scope so ajax works fine.
-                */
-                vm.storeStamps.forEach(function(stamp){
-                  if(stamp.id == stampId){
-                    stamp.owner = user;
 
-                    //Gender conversion 1-Male 0-Female
-                    if(stamp.owner.gender == 1 ){
-                      stamp.owner.gender = "Masculino";
-                    } else if(stamp.owner.gender ==0 ){
-                      stamp.owner.gender = "Feminino";
-                    }
-                  }
-                })
-                // $scope.stampOwner = user;
-              })
-        }
-
-        function loadAllUsers() {
-            UserService.GetAll()
-                .then(function (users) {
-                    vm.allUsers = users;
-                });
-        }
-
-        $scope.campaignRegisterCancel = function(){
-          vm.newCampaign = {};
-        }
-
-        function deleteUser(id) {
-            UserService.Delete(id)
-            .then(function () {
-                loadAllUsers();
-            });
-        }
     }
 
 })();

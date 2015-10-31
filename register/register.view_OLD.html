@@ -1,0 +1,114 @@
+<div class="jumbotron">
+        <div class="container">
+            <div class="col-sm-8 col-sm-offset-2">
+<!-- TODO
+1-Separar em duas telas através de divs com ng-hide e ng-show (com variavel boolean 'stepOneComplete' no .js)
+2-Primeira tela -> Nome de Usuário do Estabelecimento, Senha, Re-Senha, Email
+3-Segunda tela -> Todo o Resto (Nome, CNPJ, Cidade, Endereço, Número, Complemento, Telefone e Site)
+4-Validar se os dois campos de senha são iguais ao submeter.
+-->
+<div class="col-md-6 col-md-offset-3">
+    <h2>Cadastro de novo Estabelecimento</h2>
+    <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
+    <form name="form" ng-submit="vm.register()" role="form">
+      <!-- Company Name -->
+        <div class="form-group" ng-class="{ 'has-error': form.companyName.$dirty && form.companyName.$error.required }">
+            <label for="CompanyName">Nome do Estabelecimento *</label>
+            <input type="text" name="companyName" id="companyName" class="form-control" ng-model="vm.store.companyName" required />
+            <span ng-show="form.companyName.$dirty && form.companyName.$error.required" class="help-block">Nome do Estabelecimento é obrigatório</span>
+        </div>
+
+        <!-- CNPJ -->
+        <div class="form-group" ng-class="{ 'has-error': form.cnpj.$dirty && form.cnpj.$error.required }">
+            <label for="cnpj">CNPJ *</label>
+            <input type="text" name="cnpj" id="cnpj" class="form-control" ng-model="vm.store.cnpj" required />
+            <span ng-show="form.cnpj.$dirty && form.cnpj.$error.required" class="help-block">CNPJ é obrigatório</span>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.city.$error.required }">
+            <label for="city">Cidade *</label>
+            <input type="text" name="city" id="city" class="form-control" ng-model="vm.store.city" required />
+            <span ng-show="form.city.$dirty && form.city.$error.required" class="help-block">Cidade é obrigatória</span>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.address.$error.required }">
+            <label for="address">Endereço *</label>
+            <input type="text" name="address" id="address" class="form-control" ng-model="vm.store.address" required />
+            <span ng-show="form.address.$dirty && form.address.$error.required" class="help-block">Endereço é obrigatório</span>
+        </div>
+
+        <!-- Number -->
+        <div class="form-group" ng-class="{ 'has-error': form.number.$dirty && form.number.$error.required }">
+            <label for="number">Número *</label>
+              <input type="text" name="number" id="number" class="form-control" ng-model="vm.store.number" required />
+            <span ng-show="form.number.$dirty && form.number.$error.required" class="help-block">Número é obrigatório</span>
+        </div>
+
+        <!-- Complemento -->
+        <div class="form-group" ng-class="{ 'has-error': form.comp.$dirty && form.comp.$error.required }">
+            <label for="comp">Complemento *</label>
+            <input type="text" name="comp" id="comp" class="form-control" ng-model="vm.store.comp" required/>
+            <span ng-show="form.comp.$dirty && form.comp.$error.required" class="help-block">Complemento é obrigatório</span>
+        </div>
+
+        <!-- Telefone -->
+        <div class="form-group" ng-class="{ 'has-error': form.telefone.$dirty && form.telefone.$error.required }">
+            <label for="telefone">Telefone *</label>
+            <input type="text" name="phone" id="phone" class="form-control" ng-model="vm.store.telefone" required />
+            <span ng-show="form.telefone.$dirty && form.telefone.$error.required" class="help-block">Telefone é obrigatório</span>
+        </div>
+
+        <!-- Contact email -->
+        <div class="form-group">
+            <label for="site">Email</label>
+            <input type="text" name="email" id="email" class="form-control" ng-model="vm.store.email" />
+        </div>
+
+        <!-- Website -->
+        <div class="form-group">
+            <label for="site">Site</label>
+            <input type="text" name="site" id="site" class="form-control" ng-model="vm.store.site" />
+        </div>
+
+        <!-- Lat
+        <div class="form-group" ng-class="{ 'has-error': form.latitude.$dirty && form.latitude.$error.required }">
+            <label for="latitude">Latitude</label>
+            <input type="text" name="latitude" id="latitude" class="form-control" ng-model="vm.store.latitude" required />
+            <span ng-show="form.latitude.$dirty && form.latitude.$error.required" class="help-block">Latitude é obrigatório</span>
+        </div> -->
+
+        <!-- Long
+        <div class="form-group" ng-class="{ 'has-error': form.longitude.$dirty && form.longitude.$error.required }">
+            <label for="longitudelongitude">Longitude</label>
+            <input type="text" name="longitude" id="longitude" class="form-control" ng-model="vm.store.longitude" required />
+            <span ng-show="form.longitude.$dirty && form.longitude.$error.required" class="help-block">Longitude é obrigatório</span>
+        </div> -->
+      </br>
+        <!-- Nickname -->
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="username">Nome de usuário (será utilizado para se logar no site)</label>
+            <input type="text" name="username" id="username" class="form-control" ng-model="vm.store.username" required />
+            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Nome de usuário é obrigatório</span>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Senha</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="vm.store.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Senha é obrigatória</span>
+        </div>
+
+        <!-- Submit! -->
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Register</button>
+            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a href="#/login" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+
+
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=set_to_true_or_false"></script>
+</div>
+</div></div></div>

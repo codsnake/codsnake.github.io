@@ -195,14 +195,14 @@
   <hr/>
     <h1>Campanhas:</h1>
 
-
+<!--
     <fieldset class="form-group">
       <input ng-model="test" type="text" class="form-control" placeholder="blabla" title="Teste!" />
     </fieldset>
 
 
     {{test}}
-
+-->
 
     <table class="table table-bordered datatable" id="table-3">
       <thead>
@@ -216,29 +216,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="odd gradeX">
-          <td>Promoção 1</td>
-          <td>Descrição da Promoção 1</td>
-          <td>01/10/2015</td>
-          <td>01/12/2015</td>
-          <td>Premio da promoção 1</td>
-          <td>7</td>
-        </tr>
-        <tr class="even gradeC">
-          <td>Promoção 2</td>
-          <td>Descrição da Promoção 2</td>
-          <td>16/09/2015</td>
-          <td>22/11/2015</td>
-          <td>Premio da promoção 2</td>
-          <td>15</td>
-        </tr>
-        <tr class="odd gradeA">
-          <td>Promoção 3</td>
-          <td>Descrição da Promoção 3</td>
-          <td>25/10/2015</td>
-          <td>17/01/2016</td>
-          <td>Premio da promoção 3</td>
-          <td>12</td>
+        <tr class="odd gradeX" ng-repeat="c in campaigns track by $index">
+          <td>{{c.name}}</td>
+          <td>{{c.description}}</td>
+          <td>{{c.startDate}}</td>
+          <td>{{c.endDate}}</td>
+          <td>{{c.reward}}</td>
+          <td>{{c.numberOfStamps}}</td>
         </tr>
       </tbody>
     </table>
@@ -250,6 +234,7 @@
 </div>
 
 
+<form role="form" name="form">
 <!-- Modal 6 (Long Modal)-->
 <div class="modal fade" id="modal-6">
   <div class="modal-dialog">
@@ -266,9 +251,9 @@
           <div class="col-md-12">
 
             <div class="form-group">
-              <label for="field-1" class="control-label">Nome</label>
+              <label for="name" class="control-label">Nome *</label>
 
-              <input ng-model="vm.newCampaign.name" type="text" class="form-control" id="field-1" placeholder="Nome da campanha">
+              <input ng-model="vm.newCampaign.name" type="text" class="form-control" name="name" id="name" placeholder="Nome da campanha" required>
             </div>
 
           </div>
@@ -277,9 +262,9 @@
           <div class="col-md-12">
 
             <div class="form-group">
-              <label for="field-2" class="control-label">Descrição</label>
+              <label for="description" class="control-label">Descrição</label>
 
-              <input ng-model="vm.newCampaign.description" type="text" class="form-control" id="field-2" placeholder="Descrição da campanha">
+              <input ng-model="vm.newCampaign.description" type="text" class="form-control" name="description" id="description" placeholder="Descrição da campanha">
             </div>
 
           </div>
@@ -289,9 +274,9 @@
           <div class="col-md-4">
 
             <div class="form-group">
-              <label for="field-3" class="control-label">Data Inicial</label>
+              <label for="startDate" class="control-label">Data Inicial</label>
 
-              <input ng-model="vm.newCampaign.initDate" type="text" class="form-control" id="field-3" placeholder="Data inicial da campanha">
+              <input ng-model="vm.newCampaign.startDate" type="date" class="form-control" name="startDate" id="startDate" placeholder="Data inicial da campanha">
             </div>
 
           </div>
@@ -299,9 +284,9 @@
           <div class="col-md-4">
 
             <div class="form-group">
-              <label for="field-4" class="control-label">Data Final</label>
+              <label for="endDate" class="control-label">Data Final</label>
 
-              <input ng-model="vm.newCampaign.endDate" type="text" class="form-control" id="field-4" placeholder="Data final da campanha.">
+              <input ng-model="vm.newCampaign.endDate" type="date" class="form-control" name="endDate" id="endDate" placeholder="Data final da campanha.">
             </div>
 
           </div>
@@ -310,9 +295,9 @@
           <div class="col-md-8">
 
             <div class="form-group">
-              <label for="field-5" class="control-label">Premio</label>
+              <label for="reward" class="control-label">Premio</label>
 
-              <input ng-model="vm.newCampaign.prize" type="text" class="form-control" id="field-5" placeholder="Premio da campanha">
+              <input ng-model="vm.newCampaign.reward" type="text" class="form-control" name="reward" id="reward" placeholder="Premio da campanha">
             </div>
 
           </div>
@@ -320,9 +305,9 @@
           <div class="col-md-4">
 
             <div class="form-group">
-              <label for="field-6" class="control-label">Selos Necessários</label>
+              <label for="numberOfStamps" class="control-label">Selos Necessários *</label>
 
-              <input ng-model="vm.newCampaign.numberOfStamps" type="text" class="form-control" id="field-6" placeholder="10">
+              <input ng-model="vm.newCampaign.numberOfStamps" type="number" class="form-control" name="numberOfStamps" id="numberOfStamps" placeholder="10" required>
             </div>
 
           </div>
@@ -332,11 +317,12 @@
 
       <div class="modal-footer">
         <button ng-click="campaignRegisterCancel()" type="button" class="btn btn-default" data-dismiss="modal" data-clear="true">Cancelar</button>
-        <button type="button" class="btn btn-info">Salvar</button>
+        <button ng-click="registerNewCampaign()" type="button" class="btn btn-info" data-dismiss="modal" data-clear="true" ng-disabled="form.$invalid">Salvar</button>
       </div>
     </div>
   </div>
 </div>
+</form>
 
 <!-- JavaScripts initializations and stuff -->
 <script src="assets/js/neon-custom.js"></script>

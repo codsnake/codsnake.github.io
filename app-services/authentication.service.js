@@ -37,11 +37,11 @@
              ----------------------------------------------*/
             $http.get(baseRestURL + '/login/' + username + "/" + password) // { username: username, password: password })
                 .success(function (response) {
-                  if(response != false){
+                  if(response != "false"){
                     response.success = true;
                     callback(response);
                   } else{
-                    respone.success = false;
+                    response = {success : false, message: 'Nome de usuário e senha não conferem'};
                     callback(response);
                   }
                 });
