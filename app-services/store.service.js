@@ -21,7 +21,7 @@
         return service;
 
         function GetStoreStampsById(id){
-            return $http.get(baseRestURL + '/getStoreStamps/1').then(handleSuccess, handleError('Error getting store stamps') );
+            return $http.get(baseRestURL + '/getStoreStamps/' + id).then(handleSuccess, handleError('Error getting store stamps') );
             // TODO: Change 1 to ' + id.
         }
 

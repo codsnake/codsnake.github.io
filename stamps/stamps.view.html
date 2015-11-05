@@ -122,7 +122,7 @@
 
           <a href="#" style="font-size:30px">
           <!--	<img src="assets/images/thumb-1@2x.png" alt="" class="img-circle" width="44">-->
-          Olá, {{vm.store.username}}
+          Olá, {{vm.store.companyName}}
           </a>
       </ul>
 
@@ -273,7 +273,7 @@
         <div id="{{stamp.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
           <div class="panel-body">
             <h4>Detalhes deste cliente:</h4>
-            <img style="display: inline-block" class="pull-right" ng-src='{{stamp.logo}}' width="120" height="60"/>
+            <img style="display: inline-block" class="pull-right" ng-src='{{stamp.logo}}' width="80"/>
             <div class="col-md-8">
               <!--{{stamp.owner.id}} -
               Nome: {{stamp.owner.name}} {{stamp.owner.surname}} -->
@@ -342,10 +342,12 @@ style="background-color:ghostwhite"
             - <a href="#" ng-click="vm.deleteUser(user.id)">Delete</a>
         </li>
     </ul>
-    -->
+
 
     <p>&nbsp;</p>
     <p><a href="#/login" class="btn btn-primary">Logout</a></p>
+
+    -->
   </div>
 </div>
 
