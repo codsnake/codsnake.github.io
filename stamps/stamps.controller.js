@@ -23,7 +23,7 @@
         function initController() {
             loadCurrentStore();
             loadCurrentStoreStamps();
-            //loadAllStampsDetail();
+            loadGreetings();
         }
 
         function loadCurrentStore() {
@@ -80,7 +80,7 @@
 
             })
           })
-      }
+        }
 
         function getUserById(stampId, id){
             UserService.GetById(id)
@@ -105,6 +105,19 @@
                 })
                 // $scope.stampOwner = user;
               })
+        }
+
+        function loadGreetings(){
+          var today = new Date()
+          var curHr = today.getHours();
+
+          if(curHr<12){
+                vm.greetings = "Bom dia!";
+          }else if(curHr<18){
+                vm.greetings = "Boa tarde!";
+          }else{
+                vm.greetings = "Boa noite!";
+          }
         }
 
         function loadAllUsers() {

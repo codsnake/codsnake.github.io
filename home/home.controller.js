@@ -23,33 +23,7 @@
         function initController() {
             loadCurrentStore();
             loadCurrentStoreStamps();
-            //loadAllUsers();
-        }
-
-        /* TODO Dada uma função que produz um número randômico inteiro entre 1 e 5,
-        escreva uma função que produza um randômico inteiro entre 1 e 7. */
-
-        function randomOnetoFive(min, max){
-
-           var upperbound = max;
-           var lowerbound = min;
-           //var number = (Math.random() * ((upperbound - lowerbound) + 1) + lowerbound);
-           //console.log("OneToFive: " + number);
-
-           var number = Math.floor(Math.random() * 5 + 1);
-           return number;
-        }
-
-        $scope.randomOnetoSeven = function (){
-
-          var min = 3;
-          var max = 5;
-
-          var oneToFive = randomOnetoFive(min, max);
-          //var number = Math.random(oneToFive);
-          var number = Math.floor(Math.random(oneToFive) * 7 + 1);
-          console.log(number);
-
+            loadGreetings();
         }
 
         function loadCurrentStore() {
@@ -72,6 +46,19 @@
                   });
 
             //    });
+        }
+
+        function loadGreetings(){
+          var today = new Date()
+          var curHr = today.getHours();
+
+          if(curHr<12){
+                vm.greetings = "Bom dia!";
+          }else if(curHr<18){
+                vm.greetings = "Boa tarde!";
+          }else{
+                vm.greetings = "Boa noite!";
+          }
         }
 
         function getUserById(id){
