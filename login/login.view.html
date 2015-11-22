@@ -1,19 +1,150 @@
-<div class="jumbotron">
+<div class="page-body login-page login-form-fall">
+<div class="login-container">
+	<div class="login-header login-caret">
+		<div class="login-content">
+				<img src="assets/fidelizy_img/Logo-Fidelizy.png" width="220" alt="" />
+			<p class="description">Caro usuário, autentique-se para acessar sua área administrativa!</p>
+
+			<div class="login-progressbar-indicator">
+				<h3>43%</h3>
+				<span>logging in...</span>
+			</div>
+		</div>
+	</div>
+
+	<div class="login-progressbar">
+		<div></div>
+	</div>
+	<div class="login-form">
+		<div class="login-content">
+			<!-- <div class="form-login-error">
+				<h3>Login inválido</h3>
+			</div> -->
+
+			<form id="form_login2" name="form" ng-submit="vm.login()" role="form" autocomplete="off">
+			<a ng-hide="vm.dataLoading" href="#/register" class="btn btn-link">Register</a>
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-addon">
+							<i class="entypo-user"></i>
+						</div>
+            <div ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+						<!-- <input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="off" /> -->
+                <!--<label for="username">Nome de Usuário</label>-->
+                <input placeholder="Nome de Usuário" type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
+            </div>
+          </div>
+          <span ng-show="form.username.$dirty && form.username.$error.required" style="color: #E64C28" class="help-block">Digite o seu usuário</span>
+				</div>
+
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-addon">
+							<i class="entypo-key"></i>
+						</div>
+            <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+						<!-- <input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="off" /> -->
+                <!--<label for="password">Senha</label>-->
+                <input placeholder="Senha" type="password" name="password" id="password" class="form-control" ng-model="vm.password" autocomplete="off" required />
+            </div>
+          </div>
+          <span ng-show="form.password.$dirty && form.password.$error.required" style="color: #E64C28" class="help-block">Digite sua senha</span>
+				</div>
+
+				<div class="form-group">
+
+          <div class="form-actions">
+              <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary btn-block btn-login">
+    						Login
+                <i class="entypo-login"></i>
+              </button>
+							<br />
+              <img ng-if="vm.dataLoading" src="../assets/fidelizy_img/FidelizyLoading.GIF" />
+          </div>
+
+					<!-- <button type="submit" class="btn btn-primary btn-block btn-login"> -->
+
+					<!-- </button> -->
+				</div>
+
+				<div class="form-group">
+					<em>- ou -</em>
+				</div>
+
+				<div class="form-group">
+					<button type="button" class="btn btn-default btn-lg btn-block btn-icon icon-left facebook-button">
+						Login com Facebook
+						<i class="entypo-facebook"></i>
+					</button>
+				</div>
+
+        <div class="form-group">
+					<em>- ou -</em>
+				</div>
+
+				<div class="form-group">
+					<button type="button" class="btn btn-default btn-lg btn-block btn-icon icon-left twitter-button">
+						Login com Twitter
+						<i class="entypo-twitter"></i>
+					</button>
+				</div>
+
+        <div class="form-group">
+					<em>- ou -</em>
+				</div>
+
+				<div class="form-group">
+          <button type="button" class="btn btn-default btn-lg btn-block btn-icon icon-left google-button">
+						Login com Google+
+						<i class="entypo-gplus"></i>
+					</button>
+				</div>
+			</form>
+
+			<div class="login-bottom-links">
+				<a href="" class="link">Esqueceu sua senha?</a>
+				<br />
+				<br />
+				<br />
+				<a href="">Sobre</a> | <a href="">Publicidade</a> | <a href="">Privacidade</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<!-- Bottom scripts (common) -->
+	<script src="assets/js/gsap/main-gsap.js"></script>
+	<script src="assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
+	<script src="assets/js/bootstrap.js"></script>
+	<script src="assets/js/joinable.js"></script>
+	<script src="assets/js/resizeable.js"></script>
+	<script src="assets/js/neon-api.js"></script>
+	<script src="assets/js/jquery.validate.min.js"></script>
+	<script src="assets/js/neon-login.js"></script>
+
+
+	<!-- JavaScripts initializations and stuff -->
+	<script src="assets/js/neon-custom.js"></script>
+</div>
+
+
+<!-- <div class="jumbotron">
         <div class="container">
             <div class="col-sm-8 col-sm-offset-2">
 
 <sidebar></sidebar>
+
 ﻿<div class="col-md-6 col-md-offset-3">
     <h2>Login</h2>
     <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
     <form name="form" ng-submit="vm.login()" role="form">
         <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
-            <!--<label for="username">Nome de Usuário</label>-->
+            <!-<label for="username">Nome de Usuário</label>->
             <input placeholder="Nome de Usuário" type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
             <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
         </div>
         <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
-            <!--<label for="password">Senha</label>-->
+            <!-<label for="password">Senha</label>->
             <input placeholder="Senha" type="password" name="password" id="password" class="form-control" ng-model="vm.password" required />
             <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
         </div>
@@ -25,7 +156,7 @@
     </form>
 </div>
 
+OLD Login Screen
 
 
-
-</div></div></div>
+</div></div></div> -->

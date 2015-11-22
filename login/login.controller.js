@@ -25,9 +25,13 @@
 
                     //AuthenticationService.SetStamps();
                     $location.path('/');
+                    window.scrollTo(0, 0);
                 } else {
                     FlashService.Error(response.message);
                     vm.dataLoading = false;
+                    $location.path('/login');
+                    window.scrollTo(0, 0);
+                    //window.setTimeout(window.history.back(), 1000);
                 }
             });
         };

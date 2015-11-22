@@ -18,20 +18,8 @@
 
 </head>
 <body class="page-body">
-
-<!--
-  <div class="page-container">
-  	<div class="sidebar-menu">
-  	</div>
-
-  	<div class="main-content">
--->
-      <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
-      <div class="page-container" ng-view></div>
-<!--
-  	</div>
-  </div
--->
+    <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
+    <div class="page-container" ng-view></div>
 
 
     <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
@@ -42,22 +30,17 @@
     <script src="app.js"></script>
     <script src="app-services/authentication.service.js"></script>
     <script src="app-services/flash.service.js"></script>
-
-    <!-- Real user service that uses an api -->
     <script src="app-services/user.service.js"></script>
     <script src="app-services/store.service.js"></script>
-
-    <!-- User service
-    <script src="app-services/user.service.local-storage.js"></script>-->
 
     <script src="home/home.controller.js"></script>
     <script src="login/login.controller.js"></script>
     <script src="register/register.controller.js"></script>
     <script src="stamps/stamps.controller.js"></script>
     <script src="campaigns/campaigns.controller.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <!-- Bottom scripts (common) -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="assets/js/gsap/main-gsap.js"></script>
     <script src="assets/js/jquery-ui/js/jquery-ui-1.10.3.minimal.min.js"></script>
     <script src="assets/js/bootstrap.js"></script>
@@ -66,6 +49,6 @@
     <script src="assets/js/neon-api.js"></script>
     <script src="assets/js/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 
-
+    <script src="assets/js/neon-custom.js"></script>
 </body>
 </html>
