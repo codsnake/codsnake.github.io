@@ -22,7 +22,7 @@
 			</div> -->
 
 			<form id="form_login2" name="form" ng-submit="vm.login()" role="form" autocomplete="off">
-			<a ng-hide="vm.dataLoading" href="#/register" class="btn btn-link">Register</a>
+			<a ng-hide="vm.dataLoading" href="#/register" class="btn btn-link">Registre-se</a>
 				<div class="form-group">
 					<div class="input-group">
 						<div class="input-group-addon">
@@ -31,7 +31,7 @@
             <div ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
 						<!-- <input type="text" class="form-control" name="username" id="username" placeholder="Username" autocomplete="off" /> -->
                 <!--<label for="username">Nome de Usuário</label>-->
-                <input placeholder="Nome de Usuário" type="text" name="username" id="username" class="form-control" ng-model="vm.username" required />
+                <input placeholder="Nome de Usuário" type="text" name="username" id="username" class="form-control" ng-model="vm.username" required autofocus/>
             </div>
           </div>
           <span ng-show="form.username.$dirty && form.username.$error.required" style="color: #E64C28" class="help-block">Digite o seu usuário</span>
