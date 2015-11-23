@@ -65,7 +65,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon">
-                <i class="entypo-location"></i>
+                <i class="glyphicon glyphicon-map-marker"></i>
               </div>
               <!-- City -->
               <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.city.$error.required }">
@@ -79,7 +79,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon">
-                <i class="entypo-location"></i>
+                <i class="glyphicon glyphicon-map-marker"></i>
               </div>
               <!-- Address -->
               <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.address.$error.required }">
@@ -93,7 +93,7 @@
           <div class="form-group">
             <div class="input-group">
               <div class="input-group-addon">
-                <i class="entypo-location"></i>
+                <i class="glyphicon glyphicon-map-marker"></i>
               </div>
               <!-- Number -->
               <div class="form-group" ng-class="{ 'has-error': form.number.$dirty && form.number.$error.required }">
@@ -167,10 +167,10 @@
           <div class="form-actions">
 						<div class="form-group">
               <button class="btn btn-primary btn-block btn-login" type="submit" ng-click="vm.register()" ng-disabled="form.$invalid || vm.dataLoading">
-								Cadastrar	<i class="entypo-forward"></i>
+								Cadastrar	<i class="entypo-tag"></i>
 							</button>
               <button class="btn btn-primary btn-block btn-login" ng-click="toggleStep(vm.firstStepComplete)" ng-disabled"">
-								{{vm.stepButton}}	<i class="entypo-left-open"></i>
+								{{vm.stepButton}}	<i class="entypo-left-open-big"></i>
 							</button>
               <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
               <a href="#/login" class="btn btn-link">Cancelar</a>
@@ -243,7 +243,7 @@
         <div class="form-group">
           <button type="button" class="btn btn-primary btn-block btn-login" ng-disabled="form2.$invalid || vm.store.password != vm.store.passwordConfirm" ng-click="toggleStep(vm.firstStepComplete)">
             {{vm.stepButton}}
-            <i class="entypo-right-open"></i>
+            <i class="entypo-right-open-big"></i>
           </button>
         </div>
       </div> <!-- Step 2 Div!! -->
