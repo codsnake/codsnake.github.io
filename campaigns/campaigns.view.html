@@ -7,8 +7,9 @@
 
           <!-- logo -->
           <div class="logo">
-            <a href="index.html">
-              <img src="assets/fidelizy_img/Logo-Fidelizy.png" width="150" alt="" />
+            <a href="#">
+              <img ng-if="vm.store.logo == 'undefined'" src="assets/fidelizy_img/Logo-Fidelizy.png" width="150" alt="FidelizyLogo" />
+              <img ng-if="vm.store.logo != 'undefined'" ng-src='{{vm.store.logo}}' width="150" alt="StoreLogo" />
             </a>
           </div>
 
