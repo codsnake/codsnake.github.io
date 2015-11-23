@@ -31,7 +31,7 @@
     <div ng-show="vm.error" class="alert alert-danger">{{vm.error}}</div>
 
     <form id="form-register" name="form" role="form" autocomplete="off"> <!--ng-submit="vm.register()" >-->
-      <div ng-show="vm.firstStepComplete">
+      <div id="firstStepCompleted" ng-show="vm.firstStepComplete">
 
         <div class="form-group">
           <div class="input-group">
@@ -165,12 +165,17 @@
         <div ng-show="vm.firstStepComplete">
           <!-- Submit! -->
           <div class="form-actions">
-              <button class="btn btn-primary" ng-click="toggleStep(vm.firstStepComplete)"
-                ng-disabled"">{{vm.stepButton}}</button>
-              <button type="submit" ng-click="vm.register()" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Cadastrar</button>
+						<div class="form-group">
+              <button class="btn btn-primary btn-block btn-login" type="submit" ng-click="vm.register()" ng-disabled="form.$invalid || vm.dataLoading">
+								Cadastrar	<i class="entypo-forward"></i>
+							</button>
+              <button class="btn btn-primary btn-block btn-login" ng-click="toggleStep(vm.firstStepComplete)" ng-disabled"">
+								{{vm.stepButton}}	<i class="entypo-left-open"></i>
+							</button>
               <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
               <a href="#/login" class="btn btn-link">Cancelar</a>
-          </div>
+	          </div>
+					</div>
         </div>
     </form>
 
@@ -185,7 +190,7 @@
             <!-- Contact email -->
             <div class="form-group">
                 <!-- <label for="email">Email *</label> -->
-                <input type="email" name="email" id="email" class="form-control" ng-model="vm.store.email" placeholder="Email para contato"/>
+                <input type="email" name="email" id="email" class="form-control" ng-model="vm.store.email" placeholder="Email para contato" autofocus required/>
             </div>
           </div>
           <span ng-show="form2.email.$dirty && form2.email.$error.required" style="color: #E64C28" class="help-block">Email é obrigatório</span>
@@ -236,9 +241,9 @@
         </div>
 
         <div class="form-group">
-          <button type="button" class="btn btn-primary btn-block btn-login" ng-disabled="form2.$invalid" ng-click="toggleStep(vm.firstStepComplete)">
+          <button type="button" class="btn btn-primary btn-block btn-login" ng-disabled="form2.$invalid || vm.store.password != vm.store.passwordConfirm" ng-click="toggleStep(vm.firstStepComplete)">
             {{vm.stepButton}}
-            <i class="entypo-right-open-mini"></i>
+            <i class="entypo-right-open"></i>
           </button>
         </div>
       </div> <!-- Step 2 Div!! -->
