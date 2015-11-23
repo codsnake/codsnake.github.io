@@ -40,11 +40,12 @@
                   .then(function (data){
                     if(data != null && data != ""){
                       vm.storeStamps = data.stamps;
+                    console.log("Selos" + vm.storeStamps);
                       vm.numberOfStamps = vm.storeStamps.length;
 
                       vm.storeStamps.forEach(function(stamp){
 
-                        UserService.GetById(stamp.id).then(function(user){
+                        UserService.GetById(stamp.user).then(function(user){
 
                             stamp.owner = user;
 
@@ -60,7 +61,6 @@
 
                     }
                   });
-
             //    });
         }
 
