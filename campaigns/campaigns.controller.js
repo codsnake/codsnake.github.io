@@ -59,9 +59,9 @@
           var today = new Date()
           var curHr = today.getHours();
 
-          if(curHr<12){
+          if(curHr<12 && curHr>6){
                 vm.greetings = "Bom dia!";
-          }else if(curHr<18){
+          }else if(curHr<18 && curHr>12){
                 vm.greetings = "Boa tarde!";
           }else{
                 vm.greetings = "Boa noite!";
