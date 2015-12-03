@@ -42,7 +42,7 @@
               method: 'GET',
               responseType: 'json'
           }).success(function (data) {
-              console.log(data);
+              //console.log(data);
           })
         }
     }

@@ -18,7 +18,7 @@
 
         function Login(username, password, callback) {
 
-            /* Dummy authentication for testing, uses $timeout to simulate api call
+            /* testing auth
              ----------------------------------------------*/
             /*$timeout(function () {
                 var response;
@@ -33,19 +33,18 @@
                     });
             }, 1000);
             */
-            /* Use this for real authentication
-             ----------------------------------------------*/
-            $http.get(baseRestURL + '/login/' + username + "/" + password) // { username: username, password: password })
-                .success(function (response) {
-                  if(response != "false"){
-                    response.success = true;
-                    callback(response);
-                  } else{
-                    response = {success : false, message: 'Nome de usuário e senha não conferem'};
-                    callback(response);
-                  }
-                });
-
+            if(username == 'login2'){
+              $http.get(baseRestURL + '/login/' + username + "/" + password) // { username: username, password: password })
+                  .success(function (response) {
+                    if(response != "false"){
+                      response.success = true;
+                      callback(response);
+                    } else{
+                      response = {success : false, message: 'Nome de usuário e senha não conferem'};
+                      callback(response);
+                    }
+                  });
+            }
         }
 
         function SetCredentials(username, password, store) {
