@@ -45,7 +45,7 @@
                     }
                   });
             } else {
-              response = {success : false, message: 'Usuário bloqueado!'};
+              var response = {success : false, message: 'Usuário bloqueado!'};
               callback(response);
             }
         }
